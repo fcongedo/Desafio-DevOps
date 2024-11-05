@@ -35,6 +35,11 @@ sudo apt-get install -y tree
 # Instalar vim 
 sudo apt install -y vim 
 
+# Instalar Ansible
+sudo apt-add-repository -y ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install -y ansible
+
 # Clonar el repositorio
 git clone https://github.com/fcongedo/Desafio-DevOps
 
@@ -46,7 +51,7 @@ sudo chown -R vagrant:vagrant /home/vagrant/Documentos/Proyectos
 # Copiar archivos al directorio de destino
 if [ -d /home/vagrant/Desafio-DevOps ]; then
   sudo cp /home/vagrant/Desafio-DevOps/archivos_bash/archivo{,2}.txt /home/vagrant/Documentos/Proyectos/BlogPersonal/artículos/
-  sudo cp /home/vagrant/Desafio-DeVOps/archivos_bash/{buscar_palabra.sh,buscar_reemplazar.sh,menu.sh} /home/vagrant/Documentos/Proyectos/BlogPersonal/artículos/
+  sudo cp /home/vagrant/Desafio-DevOps/archivos_bash/{buscar_palabra.sh,buscar_reemplazar.sh,menu.sh} /home/vagrant/Documentos/Proyectos/BlogPersonal/artículos/
 fi
 
 # Cambiar permisos para ejecutar archivos .sh
