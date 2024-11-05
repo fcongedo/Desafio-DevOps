@@ -44,9 +44,9 @@ mkdir -p /home/vagrant/Documentos/Proyectos/BlogPersonal/{artículos,borradores,
 sudo chown -R vagrant:vagrant /home/vagrant/Documentos/Proyectos
 
 # Copiar archivos al directorio de destino
-if [ -d /home/vagrant/Challenge-DEVOPS ]; then
-  sudo cp /home/vagrant/Challenge-DEVOPS/archivos_bash/archivo{,2}.txt /home/vagrant/Documentos/Proyectos/BlogPersonal/artículos/
-  sudo cp /home/vagrant/Challenge-DEVOPS/archivos_bash/{buscar_palabra.sh,buscar_remplazar.sh,menu.sh} /home/vagrant/Documentos/Proyectos/BlogPersonal/artículos/
+if [ -d /home/vagrant/Desafio-DevOps ]; then
+  sudo cp /home/vagrant/Desafio-DevOps/archivos_bash/archivo{,2}.txt /home/vagrant/Documentos/Proyectos/BlogPersonal/artículos/
+  sudo cp /home/vagrant/Desafio-DeVOps/archivos_bash/{buscar_palabra.sh,buscar_remplazar.sh,menu.sh} /home/vagrant/Documentos/Proyectos/BlogPersonal/artículos/
 fi
 
 # Cambiar permisos para ejecutar archivos .sh
