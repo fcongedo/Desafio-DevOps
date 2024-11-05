@@ -40,6 +40,14 @@ sudo apt-add-repository -y ppa:ansible/ansible
 sudo apt-get update
 sudo apt-get install -y ansible
 
+# Instalar la biblioteca Docker para Python
+sudo apt-get install -y python3-pip
+sudo pip3 install docker
+
+sudo ansible-galaxy collection install community.docker
+
+
+
 # Clonar el repositorio
 git clone https://github.com/fcongedo/Desafio-DevOps
 
