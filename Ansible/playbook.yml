@@ -1,0 +1,48 @@
+---
+- name: Configurar y ejecutar contenedores Docker
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Verificar si Docker está instalado
+      command: docker --version
+      register: docker_installed
+      ignore_errors: yes
+
+    - name: Instalar Docker
+      apt:
+        name: docker.io
+        state: present
+      when: docker_installed.rc != 0
+
+    - name: Iniciar y habilitar el servicio Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Ejecutar contenedor Nginx en segundo plano
+      community.docker.docker_container:
+        name: nginx-server
+        image: nginx
+        state: started
+        detach: yes
+        ports:
+          - "8081:80"
+
+    - name: Ejecutar contenedor Debian en modo interactivo
+      community.docker.docker_container:
+        name: debian-htop
+        image: debian
+        state: started
+        tty: yes
+        command: /bin/bash
+
+    - name: Actualizar repositorios en el contenedor Debian
+      community.docker.docker_container_exec:
+        container: debian-htop
+        command: apt-get update
+
+    - name: Instalar htop en el contenedor Debian
+      community.docker.docker_container_exec:
+        container: debian-htop
+        command: apt-get install -y htop
