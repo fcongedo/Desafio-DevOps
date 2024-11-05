@@ -36,7 +36,7 @@ sudo apt-get install -y tree
 sudo apt install -y vim 
 
 # Clonar el repositorio
-git clone https://github.com/fcongedo/Challenge-DEVOPS
+git clone https://github.com/fcongedo/Desafio-DevOps
 
 mkdir -p /home/vagrant/Documentos/Proyectos/BlogPersonal/{artículos,borradores,imágenes,plantillas,ProyectoAppMovil/android,ProyectoAppMovil/documentación,ProyectoAppMovil/ios,ProyectoAppMovil/recursos,TiendaOnline/código/backend/{controllers,models,routes,views},TiendaOnline/código/frontend/assets/{css,js},TiendaOnline/código/frontend/components,TiendaOnline/documentación,pruebas}
 
